@@ -8,7 +8,7 @@
 
 2- Now, to push the image to the AWS -ECR we need to install aws cli. If not ECR , you can even push the image to docker hub.
 
-  You can install aws cli with the following cmds :  
+You can install aws cli with the following cmds :  
   
 > curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 
@@ -27,14 +27,22 @@
 4 - Install kubectl and ekctl with following cmds:
 
 > insatlling kubectl:
-    > curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
-    > chmod +x ./kubectl
-    > sudo mv ./kubectl /usr/local/bin
-    > kubectl version --short --client
-    > ekctl :
-    > curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-    > sudo mv /tmp/eksctl /usr/local/bin
-    > eksctl version
+
+  > curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubect
+
+   > chmod +x ./kubectl
+ 
+  > sudo mv ./kubectl /usr/local/bin
+ 
+   > kubectl version --short --client
+
+   > ekctl :
+
+> curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+ 
+   > sudo mv /tmp/eksctl /usr/local/bin
+ 
+   > eksctl version
 
 
   5 - create the eks cluster with the cmd - 
@@ -44,22 +52,37 @@
   6 - Install argo cd-
   
    > kubectl create namespace argocd
-   > kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-   > kubectl port-forward svc/argocd-server -n argocd 8080:443 --address=0.0.0.0 &   (enable port 8080 in your security group of the instance)
-   > deafult username of argocd is "admin" and to get the password, perform following steps
-   > kubectl get secret -n argocd
-   > kubectl edit secret argocd-initial-admin-secret -n argocd
-   > echo <your-cryptographic-code> | base64 --decode
-    paste this paswd and you can now access argocd
+ 
+> kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+  > kubectl port-forward svc/argocd-server -n argocd 8080:443 --address=0.0.0.0 &   (enable port 8080 in your security group of the instance)
+ 
+ > deafult username of argocd is "admin" and to get the password, perform following steps
+
+ > kubectl get secret -n argocd
+ 
+ > kubectl edit secret argocd-initial-admin-secret -n argocd
+ 
+ > echo <your-cryptographic-code> | base64 --decode
+
+ > paste this paswd and you can now access argocd
+
 
   7 - Select new app , and complete the form by 
-      > giving application name (in small letters) and project name: deafult, sync policy: automatic, tick prune resources and self-heal
-      > sync options: tick auto-create namespace and apply out of sync only
-      > giving github url and under revision section give the github branch in which code is present , which is master 
-      > set path as . , as the manifest files are present in root directoy
-      > Give cluster url , which is auto-created and give namespace "deafult"
-      > Then create the app
-      > To access the app on browser run - kubectl port-forward svc/weather-app-service 5000:5000 --address 0.0.0.0 & (enable port 5000 in your security group)
+  
+   > giving application name (in small letters) and project name: deafult, sync policy: automatic, tick prune resources and self-heal
+      
+   > sync options: tick auto-create namespace and apply out of sync only
+      
+   > giving github url and under revision section give the github branch in which code is present , which is master 
+      
+   > set path as . , as the manifest files are present in root directoy
+      
+   > Give cluster url , which is auto-created and give namespace "deafult"
+      
+   > Then create the app
+      
+   > To access the app on browser run - kubectl port-forward svc/weather-app-service 5000:5000 --address 0.0.0.0 & (enable port 5000 in your security group)
 
 
 
