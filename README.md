@@ -100,11 +100,21 @@ You can install aws cli with the following cmds :
  ![image alt](https://github.com/kadamvignesh/weather-app/blob/master/Screenshot%20(93).png?raw=true)
  
 
+ ![image alt](https://github.com/kadamvignesh/weather-app/blob/master/Screenshot%20(99).png?raw=true)
+
+weather in mumbai
+ ![image alt](https://github.com/kadamvignesh/weather-app/blob/master/Screenshot%20(95).png?raw=true)
+
+weather in barcelona
+ ![image alt](https://github.com/kadamvignesh/weather-app/blob/master/Screenshot%20(97).png?raw=true)
+
+ 
 
 
-      
+ 
 
 
+ 
 
     
 
