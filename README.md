@@ -4,8 +4,9 @@
 
    Install docker for creating the image of the application with cmd 
    
-   > sudo apt-install docker.io -y 
-   > sudo chown $USER /var/run/docker.sock
+> sudo apt-install docker.io -y
+ 
+> sudo chown $USER /var/run/docker.sock
    
 
 2- Now, to push the image to the AWS -ECR we need to install aws cli. If not ECR , you can even push the image to docker hub.
@@ -38,7 +39,7 @@ You can install aws cli with the following cmds :
  
    > kubectl version --short --client
 
-   > ekctl :
+> installing ekctl :
 
 > curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
  
@@ -57,6 +58,10 @@ You can install aws cli with the following cmds :
  
 > kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
+> check for argocd pods-
+
+> kubectl get pods -n argocd and when everything is running run the following cmd : 
+
   > kubectl port-forward svc/argocd-server -n argocd 8080:443 --address=0.0.0.0 &   (enable port 8080 in your security group of the instance)
  
  > deafult username of argocd is "admin" and to get the password, perform following steps
@@ -70,6 +75,8 @@ You can install aws cli with the following cmds :
  > paste this paswd and you can now access argocd
 
 
+
+7- In the deployment file give the image of the application , which is present in your aws-ecr
   7 - Select new app , and complete the form by 
   
    > giving application name (in small letters) and project name: deafult, sync policy: automatic, tick prune resources and self-heal
