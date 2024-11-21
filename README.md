@@ -2,9 +2,11 @@
 
 1- Create a ec2 instance of t2.medium and git clone the project
 
-   Install docker for creating the image of the application with cmd sudo apt-install docker.io -y and sudo chown $USER /var/run/docker.sock
-   for giving docker permission to the user
-
+   Install docker for creating the image of the application with cmd 
+   
+   > sudo apt-install docker.io -y 
+   > sudo chown $USER /var/run/docker.sock
+   
 
 2- Now, to push the image to the AWS -ECR we need to install aws cli. If not ECR , you can even push the image to docker hub.
 
