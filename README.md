@@ -1,15 +1,21 @@
 ## Deploying the weather-app on AWS-EKS cluster using argo-cd ##
 
 1- Create a ec2 instance of t2.medium and git clone the project
+
    Install docker for creating the image of the application with cmd sudo apt-install docker.io -y and sudo chown $USER /var/run/docker.sock
    for giving docker permission to the user
 
 
 2- Now, to push the image to the AWS -ECR we need to install aws cli. If not ECR , you can even push the image to docker hub.
+
   You can install aws cli with the following cmds :  
+  
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
 sudo apt install unzip
+
 unzip awscliv2.zip
+
 sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin --update
 
 
