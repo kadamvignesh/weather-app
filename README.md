@@ -77,7 +77,8 @@ You can install aws cli with the following cmds :
 
 
 7- In the deployment file give the image of the application , which is present in your aws-ecr
-  7 - Select new app , and complete the form by 
+
+8 - Select new app , and complete the form by 
   
    > giving application name (in small letters) and project name: deafult, sync policy: automatic, tick prune resources and self-heal
       
