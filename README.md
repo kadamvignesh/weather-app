@@ -62,7 +62,7 @@ You can install aws cli with the following cmds :
 
 > kubectl get pods -n argocd and when everything is running run the following cmd : 
 
-  > kubectl port-forward svc/argocd-server -n argocd 8080:443 --address=0.0.0.0 &   (enable port 8080 in your security group of the instance)
+  > "kubectl port-forward svc/argocd-server -n argocd 8080:443 --address=0.0.0.0 &"   (enable port 8080 in your security group of the instance)
  
  > deafult username of argocd is "admin" and to get the password, perform following steps
 
@@ -92,7 +92,7 @@ You can install aws cli with the following cmds :
       
    > Then create the app
       
-   > To access the app on browser run - kubectl port-forward svc/weather-app-service 5000:5000 --address 0.0.0.0 & (enable port 5000 in your security group)
+   > To access the app on browser run - "kubectl port-forward svc/weather-app-service 5000:5000 --address 0.0.0.0 &" (enable port 5000 in your security group)
 
 
 
