@@ -92,7 +92,7 @@ You can install aws cli with the following cmds :
       
    > Then create the app
       
-   > To access the app on browser run - "kubectl port-forward svc/weather-app-service 5000:5000 --address 0.0.0.0 &" (enable port 5000 in your security group)
+   > To access the app on browser run - "kubectl port-forward svc/weather-app-service 5000:5000 --address 0.0.0.0 &" (enable port 5000 in your security group of your instance)
 
 
 
